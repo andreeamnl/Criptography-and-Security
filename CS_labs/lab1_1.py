@@ -28,17 +28,14 @@ def compress(x):
 
 def change_index_encryption(letter, key):
     new_index = 0
-    #print(f"letter is {letter}, key is {key}")
     current_index = upper.index(letter)
     new_index = current_index+key
-    #print(f"new index is {new_index}")
     if new_index>25:
         new_index =  new_index - 26
     return new_index
 
 def change_index_decryption(letter, key):
     new_index = 0
-    #print(f"letter is {letter}, key is {key}")
     current_index = upper.index(letter)
     new_index = current_index-key
     if new_index<0:
@@ -48,7 +45,6 @@ def change_index_decryption(letter, key):
 
 
 def encrypt(x):
-    #print(f"youre in encrypt , x is {x}")
     encrypted = ''
     for i in x:
         encrypted += upper[change_index_encryption(i,key)]
@@ -56,7 +52,6 @@ def encrypt(x):
 
 
 def decrypt(x):
-    #print(f"youre in decrypt , x is {x}")
     decrypted = ''
     for i in x:
         decrypted += upper[change_index_decryption(i,key)]
