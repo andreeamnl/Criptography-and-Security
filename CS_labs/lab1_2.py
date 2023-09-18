@@ -47,7 +47,6 @@ def compresser2(key2):
     for letter in key2:
         if (letter.upper() not in compressed):
             compressed+=letter.upper()
-            #print(f"letter is {letter} compressed is {compressed}")
     return compressed
 
 
@@ -65,7 +64,6 @@ def new_upper():
     list = []
     lister = [i for i in key2]
     list+= lister
-    #print(list)
     for i in upper:
         if (i not in list):
             list.append(i)
@@ -78,17 +76,14 @@ print(new_upper_list)
 
 def change_index_encryption(letter, key):
     new_index = 0
-    #print(f"letter is {letter}, key is {key}")
     current_index = upper.index(letter)
     new_index = current_index+key
-    #print(f"new index is {new_index}")
     if new_index>25:
         new_index =  new_index - 26
     return new_index
 
 def change_index_decryption(letter, key):
     new_index = 0
-    #print(f"letter is {letter}, key is {key}")
     current_index = new_upper_list.index(letter)
     new_index = current_index-key
     if new_index<0:
@@ -97,7 +92,6 @@ def change_index_decryption(letter, key):
 
 
 def encrypt(x):
-    #print(f"youre in encrypt , x is {x}")
     encrypted = ''
     for i in x:
         encrypted += new_upper_list[change_index_encryption(i,key)]
@@ -105,7 +99,6 @@ def encrypt(x):
 
 
 def decrypt(x):
-    #print(f"youre in decrypt , x is {x}")
     decrypted = ''
     for i in x:
         decrypted += upper[change_index_decryption(i,key)]
