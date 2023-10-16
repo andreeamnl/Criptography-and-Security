@@ -57,7 +57,7 @@ x = compress(x)
 
 key = int(input("Enter a valid key: "))
 while key not in digits:
-    key = int(input("Try entering a valid digit 1-9 : "))
+    key = int(input("Try entering a valid number by 25 inclusiv : "))
 print(f"key is {key}")
 
 choice = input("Type e for encryption, d for decryption: ")
