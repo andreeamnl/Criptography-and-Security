@@ -4,7 +4,6 @@ space = ' '
 digits = list(range(1, 26))
 x = input('Enter phrase: ')
 
-
 def isValid(x):
     flag = True
     for i in x:
@@ -15,7 +14,6 @@ def isValid(x):
             break
     return flag
 
-
 def compress(x):
     phrase = ''
     for i in x:
@@ -25,57 +23,42 @@ def compress(x):
             phrase+=i
     return phrase
 
-
 def change_index_encryption(letter, key):
     new_index = 0
-    #print(f"letter is {letter}, key is {key}")
     current_index = upper.index(letter)
     new_index = current_index+key
-    #print(f"new index is {new_index}")
     if new_index>25:
         new_index =  new_index - 26
     return new_index
 
 def change_index_decryption(letter, key):
     new_index = 0
-    #print(f"letter is {letter}, key is {key}")
     current_index = upper.index(letter)
     new_index = current_index-key
     if new_index<0:
         new_index = 26 + new_index
     return new_index
 
-
-
 def encrypt(x):
-    #print(f"youre in encrypt , x is {x}")
     encrypted = ''
     for i in x:
         encrypted += upper[change_index_encryption(i,key)]
     return encrypted
 
-
 def decrypt(x):
-    #print(f"youre in decrypt , x is {x}")
     decrypted = ''
     for i in x:
         decrypted += upper[change_index_decryption(i,key)]
     return decrypted
-
-
 ##############################################
-
 while not isValid(x):
     x = input("Try again: ")
 x = compress(x)
-
-
 
 key = int(input("Enter a valid key: "))
 while key not in digits:
     key = int(input("Try entering a valid digit 1-9 : "))
 print(f"key is {key}")
-
 
 choice = input("Type e for encryption, d for decryption: ")
 if choice == 'e':
@@ -85,28 +68,4 @@ elif choice == 'd':
 else:
     print('Run again')
 
-
 ############################################################
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
